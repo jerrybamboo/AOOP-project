@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\calculator.o
+./release\data.o
+./release\notoperator.o
+./release\operator.o
+./release\transformation.o
+./release\calculation.o
+./release\mygraphicview.o
+./release\moc_mainwindow.o
+./release\moc_mygraphicview.o
+);
