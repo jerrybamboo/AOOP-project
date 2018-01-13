@@ -1,0 +1,7 @@
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\bin\Debug\Animation.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\bin\Debug\Animation.pdb
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\obj\x86\Debug\Animation.Form1.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\obj\x86\Debug\Animation.Properties.Resources.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\obj\x86\Debug\Animation.csproj.GenerateResource.Cache
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\obj\x86\Debug\Animation.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0421\Lab_0421_Lecture-VC_Sharp 2010\Animation\Animation\obj\x86\Debug\Animation.pdb

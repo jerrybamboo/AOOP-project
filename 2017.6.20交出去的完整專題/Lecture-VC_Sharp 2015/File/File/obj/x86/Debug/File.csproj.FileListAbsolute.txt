@@ -1,0 +1,3 @@
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\File.Form1.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\File.Properties.Resources.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\File.csproj.GenerateResource.Cache

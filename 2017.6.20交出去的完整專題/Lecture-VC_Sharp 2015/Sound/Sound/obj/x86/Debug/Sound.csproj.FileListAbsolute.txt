@@ -1,0 +1,25 @@
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\bin\Debug\Sound.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\bin\Debug\Sound.pdb
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\bin\Debug\Interop.WMPLib.dll
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\bin\Debug\AxInterop.WMPLib.dll
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Interop.WMPLib.dll
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\AxInterop.WMPLib.dll
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Sound.csproj.ResolveComReference.cache
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Sound.Form1.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Sound.Properties.Resources.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Sound.csproj.GenerateResource.Cache
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Sound.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Sound\Sound\obj\x86\Debug\Sound.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.csproj.ResolveComReference.cache
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.exe
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\bin\Debug\Sound.exe
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\bin\Debug\Sound.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\bin\Debug\Interop.WMPLib.dll
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.Form1.resources
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.Properties.Resources.resources
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Sound\Sound\obj\x86\Debug\Sound.csproj.GenerateResource.Cache

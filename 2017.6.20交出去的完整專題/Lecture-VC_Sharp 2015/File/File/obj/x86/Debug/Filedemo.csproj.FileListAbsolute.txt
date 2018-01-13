@@ -1,0 +1,16 @@
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\Filedemo.csprojResolveAssemblyReference.cache
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\Filedemo.Form1.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\File.Properties.Resources.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\Filedemo.csproj.GenerateResource.Cache
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\bin\Debug\File.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\bin\Debug\File.pdb
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\File.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\File\File\obj\x86\Debug\File.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\obj\x86\Debug\File.exe
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\obj\x86\Debug\File.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\bin\Debug\File.exe
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\bin\Debug\File.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\obj\x86\Debug\Filedemo.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\obj\x86\Debug\Filedemo.Form1.resources
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\obj\x86\Debug\File.Properties.Resources.resources
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\File\File\obj\x86\Debug\Filedemo.csproj.GenerateResource.Cache

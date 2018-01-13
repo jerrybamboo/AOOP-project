@@ -1,0 +1,9 @@
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\bin\Debug\Keyboard.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\bin\Debug\Keyboard.pdb
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\obj\x86\Debug\Keyboard.Form1.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\obj\x86\Debug\Keyboard.Properties.Resources.resources
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\obj\x86\Debug\Keyboard.csproj.GenerateResource.Cache
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\obj\x86\Debug\Keyboard.exe
+F:\TA\1032 1022 1012 ECE Object Oriented Programming\Lab Lecture\2015\Lab_0505\Lab_0505_Lecture-VC_Sharp 2010\Keyboard\Keyboard\obj\x86\Debug\Keyboard.pdb
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Keyboard\Keyboard\obj\x86\Debug\Keyboard.exe
+C:\Users\admin\Desktop\專題\Lecture-VC_Sharp 2015\Keyboard\Keyboard\obj\x86\Debug\Keyboard.pdb
