@@ -21,9 +21,7 @@ private:
     long long int x_h[100];
     int x_len;
 
-    double DX_up[100];
-    double DX_down[100];
-    int DX_len;
+
 public:
     Calculation();
     Calculation(double,bool);

@@ -22,7 +22,8 @@ class MainWindow : public QMainWindow
     bool alpha;
     bool draw;
     double answer;
-    bool open;
+    bool DX_open;
+    int DX_stage;//0->輸入積分攻式，1->輸入上界，2->輸入下界
 
     double range_x;
     double range_y;
@@ -36,6 +37,10 @@ class MainWindow : public QMainWindow
     QString dot_rec[5];
     QString ans_rec[5];
     int choose_revise;//choose_revise，0->正常，n->修改n
+
+    double DX_up[100];//積分上界
+    double DX_down[100];//積分下界
+    int DX_len;//有幾個積分
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -46,12 +51,13 @@ public:
     Data data;
 
     QString a;
-    int c;
+
     void show_error();
     void push_alpha();
     void recover_from_alpha();
     void draw_pic();
-    QString cal_dx(QString ,double ,double ,bool&,double sum);
+    QString cal_dx(QString ,double,double,bool&,double)throw(int);
+    void cal_dx_bf(QString ,bool&,double)throw(int);
 
 private slots:
     void on_pushButton_44_clicked();
@@ -142,9 +148,7 @@ private slots:
 
     void on_pushButton_2_clicked();
 
-    void on_pushButton_3_clicked();
 
-    void on_pushButton_4_clicked();
 
     void on_pushButton_5_clicked();
 
@@ -177,6 +181,8 @@ private slots:
     void on_ans_button_5_clicked();
 
     void on_clear_button_clicked();
+
+    void on_DX_enter_button_clicked();
 
 private:
     Ui::MainWindow *ui;

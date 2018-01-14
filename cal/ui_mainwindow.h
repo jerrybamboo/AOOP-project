@@ -33,8 +33,6 @@ public:
     QWidget *centralWidget;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
     QPushButton *pushButton_7;
@@ -102,6 +100,7 @@ public:
     QPushButton *ans_button_4;
     QPushButton *ans_button_5;
     QPushButton *clear_button;
+    QPushButton *DX_enter_button;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -118,13 +117,6 @@ public:
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(110, 230, 81, 23));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(200, 230, 41, 23));
-        pushButton_4 = new QPushButton(centralWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setEnabled(true);
-        pushButton_4->setGeometry(QRect(240, 230, 41, 23));
         pushButton_5 = new QPushButton(centralWidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(110, 270, 81, 23));
@@ -353,12 +345,13 @@ public:
         clear_button = new QPushButton(centralWidget);
         clear_button->setObjectName(QStringLiteral("clear_button"));
         clear_button->setGeometry(QRect(840, 490, 93, 28));
+        DX_enter_button = new QPushButton(centralWidget);
+        DX_enter_button->setObjectName(QStringLiteral("DX_enter_button"));
+        DX_enter_button->setGeometry(QRect(200, 230, 81, 28));
         MainWindow->setCentralWidget(centralWidget);
         m_pWidget->raise();
         pushButton->raise();
         pushButton_2->raise();
-        pushButton_3->raise();
-        pushButton_4->raise();
         pushButton_5->raise();
         pushButton_6->raise();
         pushButton_7->raise();
@@ -425,6 +418,7 @@ public:
         ans_button_4->raise();
         ans_button_5->raise();
         clear_button->raise();
+        DX_enter_button->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -442,8 +436,6 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Rad_or_Deg", 0));
         pushButton_2->setText(QApplication::translate("MainWindow", "ALPHA", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "<-", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "->", 0));
         pushButton_5->setText(QApplication::translate("MainWindow", "d_dx", 0));
         pushButton_6->setText(QApplication::translate("MainWindow", "DRAW", 0));
         pushButton_7->setText(QApplication::translate("MainWindow", "X!", 0));
@@ -505,6 +497,7 @@ public:
         ans_button_4->setText(QApplication::translate("MainWindow", "ANS4", 0));
         ans_button_5->setText(QApplication::translate("MainWindow", "ANS5", 0));
         clear_button->setText(QApplication::translate("MainWindow", "\346\270\205\347\251\272", 0));
+        DX_enter_button->setText(QApplication::translate("MainWindow", "enter(dx)", 0));
     } // retranslateUi
 
 };

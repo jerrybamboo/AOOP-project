@@ -25,7 +25,9 @@ MainWindow::MainWindow(QWidget *parent) :
     answer=0;
     radordeg=deg;
     dot[0]="Deg";
-    open=false;
+    DX_open=false;
+    DX_stage=0;
+    DX_len=0;
     alpha=false;
 
     range_x=359.9;
@@ -47,6 +49,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->m_pWidget->setPalette(pal);
     ui->m_pWidget->show();
 
+}
+
+void DEBUG_QSTRING_COUT(QString data,int site){
+    char p[1000];
+    for(int i=0;i<data.length();i++)
+        p[i]=data[i].toLatin1();
+    p[data.length()]='\0';
+    cout<<"DEBUG #"<<site<<" "<<p<<endl;
 }
 
 MainWindow::~MainWindow()
@@ -105,7 +115,7 @@ void MainWindow::on_pushButton_46_clicked()
 void MainWindow::on_pushButton_47_clicked()
 {
     a+="A";
-    dot[1]+="Ans";
+    dot[1]+="ANS";
     ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
 }
 
@@ -125,6 +135,9 @@ void MainWindow::on_pushButton_48_clicked()//按下'='後
     Calculation c(answer,radordeg);
     QString ans="";
     int l=c.trans(p);
+    cout<<"after transform p="<<p<<endl;
+    cout<<"DX_up[DX_len-1]="<<DX_up[DX_len-1]<<endl;
+    cout<<"DX_down[DX_len-1]="<<DX_down[DX_len-1]<<endl;
     ui->lineEdit->setText(p);
     for(int i=0;i<strlen(p);i++){
         if(p[i]=='D'){
@@ -135,86 +148,94 @@ void MainWindow::on_pushButton_48_clicked()//按下'='後
 
     if(!DX){
 
+        data.judge_error(a);
+
+        if(data.error()){
+            show_error();
+            return;
+        }
+
+
+        //記錄各次方程式之內部計算
+        if(!choose_revise){
+            a_rec[4]=a_rec[3];
+            a_rec[3]=a_rec[2];
+            a_rec[2]=a_rec[1];
+            a_rec[1]=a_rec[0];
+            a_rec[0]=a;
+        }
+        else{
+            a_rec[choose_revise-1]=a;
+        }
+
+
+
+
+
+        //記錄各次方程式之外部顯示
+        if(!choose_revise){
+            dot_rec[4]=dot_rec[3];
+            dot_rec[3]=dot_rec[2];
+            dot_rec[2]=dot_rec[1];
+            dot_rec[1]=dot_rec[0];
+            dot_rec[0]=dot[1];
+        }
+        else{
+            dot_rec[choose_revise-1]=dot[1];
+        }
+
+
+
+        a+='=';
+        dot[1]+="=";
+
+        bool test_error=false;
+        ans=c.cal(p,l,test_error);
+        if(test_error){
+            show_error();
+            return;
+        }
+        dot[1]+=ans;
+
+        if(!choose_revise){
+            ans_rec[4]=ans_rec[3];
+            ans_rec[3]=ans_rec[2];
+            ans_rec[2]=ans_rec[1];
+            ans_rec[1]=ans_rec[0];
+            ans_rec[0]=ans;
+        }
+        else{
+            ans_rec[choose_revise-1]=ans;
+        }
+
+
+
+        //記錄各次方程式之外部顯示(label)
+        if(!choose_revise){
+            rec[4]=rec[3];
+            rec[3]=rec[2];
+            rec[2]=rec[1];
+            rec[1]=rec[0];
+            rec[0]=dot[1];
+        }
+        else{
+            rec[choose_revise-1]=dot[1];
+            choose_revise=0;
+        }
+        answer=c.get_ans();
+
     }
-    else{
-        //ans=cal_dx(a)
+    else{//有積分時的計算
+        try{
+            bool test_error=false;
+            cout<<"enter DX_bf,DX_len="<<DX_len<<endl;
+            cal_dx_bf(a,test_error,0);
+        }
+        catch(int x){
+            cout<<"DX fail!!!"<<"error"<<x<<endl;
+        }
+
     }
-
-    data.judge_error(a);
-
-    if(data.error()){
-        show_error();
-        return;
-    }
-
-
-    //記錄各次方程式之內部計算
-    if(!choose_revise){
-        a_rec[4]=a_rec[3];
-        a_rec[3]=a_rec[2];
-        a_rec[2]=a_rec[1];
-        a_rec[1]=a_rec[0];
-        a_rec[0]=a;
-    }
-    else{
-        a_rec[choose_revise-1]=a;
-    }
-
-
-
-
-
-    //記錄各次方程式之外部顯示
-    if(!choose_revise){
-        dot_rec[4]=dot_rec[3];
-        dot_rec[3]=dot_rec[2];
-        dot_rec[2]=dot_rec[1];
-        dot_rec[1]=dot_rec[0];
-        dot_rec[0]=dot[1];
-    }
-    else{
-        dot_rec[choose_revise-1]=dot[1];
-    }
-
-
-
-    a+='=';
-    dot[1]+="=";
-
-    bool test_error=false;
-    ans=c.cal(p,l,test_error);
-    if(test_error){
-        show_error();
-        return;
-    }
-    dot[1]+=ans;
-
-    if(!choose_revise){
-        ans_rec[4]=ans_rec[3];
-        ans_rec[3]=ans_rec[2];
-        ans_rec[2]=ans_rec[1];
-        ans_rec[1]=ans_rec[0];
-        ans_rec[0]=ans;
-    }
-    else{
-        ans_rec[choose_revise-1]=ans;
-    }
-
-
-
-    //記錄各次方程式之外部顯示(label)
-    if(!choose_revise){
-        rec[4]=rec[3];
-        rec[3]=rec[2];
-        rec[2]=rec[1];
-        rec[1]=rec[0];
-        rec[0]=dot[1];
-    }
-    else{
-        rec[choose_revise-1]=dot[1];
-        choose_revise=0;
-    }
-
 
 
     ui->label->setText("( 1 ) "+rec[0]);
@@ -225,68 +246,225 @@ void MainWindow::on_pushButton_48_clicked()//按下'='後
     ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
     dot[1]="";
     a="";
-    answer=c.get_ans();
+    DX_len=0;
     cout<<answer<<endl;
 }
 
-QString MainWindow::cal_dx(QString txt,double up,double down,bool &error,double sum){
+void MainWindow::cal_dx_bf(QString txt,bool &error,double sum)throw(int){
+    try{
 
-    /*
-    for(int i=txt.length()-1;i>=0;i--){
-        if(txt[i]=='D'){
-            QString temp;
-            temp=txt.mid(0,i);
-            //txt=cal_dx(temp,up,doen,error)+txt.mid(i+1,txt.length()-i-1);
-
+        //記錄各次方程式之內部計算
+        if(!choose_revise){
+            a_rec[4]=a_rec[3];
+            a_rec[3]=a_rec[2];
+            a_rec[2]=a_rec[1];
+            a_rec[1]=a_rec[0];
+            a_rec[0]=a;
         }
-    }
-
-
-
-    char p[1000];
-
-    for(int i=0;i<a.length();i++)
-        p[i]=txt[i].toLatin1();
-    p[txt.length()]='\0';
-
-
-
-    char p[1000];
-    QString b;
-
-    while(1){
-        data.clrerror();
-        if(down>up){
-            break;
+        else{
+            a_rec[choose_revise-1]=a;
         }
 
-        b=a;
-        b.replace('X',QString::number(down));
-        for(int i=0;i<b.length();i++)
-            p[i]=b[i].toLatin1();
-        p[b.length()]='\0';
-        bool test_error=false;
-        data.judge_error(b);
-        if(data.error()){
-            continue;
+
+
+
+        //記錄各次方程式之外部顯示
+        if(!choose_revise){
+            dot_rec[4]=dot_rec[3];
+            dot_rec[3]=dot_rec[2];
+            dot_rec[2]=dot_rec[1];
+            dot_rec[1]=dot_rec[0];
+            dot_rec[0]=dot[1];
+        }
+        else{
+            dot_rec[choose_revise-1]=dot[1];
         }
 
+        DX_len--;
+
+        QString temp="";
+        QString temp2="";
+
+        for(int i=txt.length()-1;i>=0;i--){
+            if(txt[i]=='D'){
+                temp=txt.mid(0,i);
+                temp2=txt.mid(i+1,txt.length()-i-1);
+                break;
+            }
+        }
+
+        \
+        //txt=cal_dx(temp,DX_up[DX_len],DX_down[DX_len--],error,sum)+temp2;
+        txt=temp2;
+        char p[1000];
+
+        for(int i=0;i<a.length();i++)
+            p[i]=txt[i].toLatin1();
+        p[a.length()]='\0';
 
         Calculation c(answer,radordeg);
         QString ans="";
         int l=c.trans(p);
+
+        a+='=';
+        dot[1]+="=";
+
+        bool test_error=false;
         ans=c.cal(p,l,test_error);
-        if(test_error){
-            continue;
+
+        dot[1]+=ans;
+
+        if(!choose_revise){
+            ans_rec[4]=ans_rec[3];
+            ans_rec[3]=ans_rec[2];
+            ans_rec[2]=ans_rec[1];
+            ans_rec[1]=ans_rec[0];
+            ans_rec[0]=ans;
+        }
+        else{
+            ans_rec[choose_revise-1]=ans;
+        }
+
+
+
+        //記錄各次方程式之外部顯示(label)
+        if(!choose_revise){
+            rec[4]=rec[3];
+            rec[3]=rec[2];
+            rec[2]=rec[1];
+            rec[1]=rec[0];
+            rec[0]=dot[1];
+        }
+        else{
+            rec[choose_revise-1]=dot[1];
+            choose_revise=0;
         }
         answer=c.get_ans();
-        sum+=ans;
+    }
+    catch(int x){
+        throw x;
+    }
+    catch(...){
+        throw 0;
+    }
+}
 
-        down+=0.1;
+QString MainWindow::cal_dx(QString txt,double up,double down,bool &error,double sum)throw(int){
+    try{
+        double h=0.01;
+
+        for(int i=txt.length()-1;i>=0;i--){
+            if(txt[i]=='D'){
+                QString temp;
+                temp=txt.mid(0,i);
+                if(DX_len<0){
+                    throw 1;
+                    show_error();
+                    cout<<"error:DX_len<0"<<endl;
+                    return "";
+                }
+                txt=cal_dx(temp,DX_up[DX_len],DX_down[DX_len--],error,sum)+txt.mid(i+1,txt.length()-i-1);
+
+            }
+        }
+
+
+
+        char p[1000];
+
+        for(int i=0;i<a.length();i++)
+            p[i]=txt[i].toLatin1();
+        p[txt.length()]='\0';
+
+
+        QString b;
+
+        while(1){
+            data.clrerror();
+            if(down>up){
+                throw 2;
+                break;
+            }
+
+            b=txt;
+            b.replace('X',QString::number(down));
+            for(int i=0;i<b.length();i++)
+                p[i]=b[i].toLatin1();
+            p[b.length()]='\0';
+            bool test_error=false;
+            data.judge_error(b);
+            if(data.error()){
+                continue;
+            }
+
+
+            Calculation c(answer,radordeg);
+            QString ans="";
+            int l=c.trans(p);
+            ans=c.cal(p,l,test_error);
+            if(test_error){
+                continue;
+            }
+            answer=c.get_ans();
+            sum+=answer;
+
+            down+=h;
+        }
+
+        return QString::number(answer=h*sum);
+    }
+    catch(int x){
+        throw x;
+    }
+    catch(...){
+        throw 0;
     }
 
-    return QString::number(sum);
-    */
+
+}
+
+void MainWindow::on_DX_enter_button_clicked()
+{
+    if(DX_open){
+        if(DX_stage==0){
+            a+=",";
+            dot[1]+=",u=";
+            DX_stage++;
+        }
+        else if(DX_stage==1){
+            a+=",";
+            dot[1]+=",d=";
+            DX_stage++;
+        }
+        else if(DX_stage==2){
+            bool once=true;
+            for(int i=a.length()-1;i>=0;i--){
+                if(a[i]==','){
+
+                    if(once){
+
+                        DX_down[DX_len]=a.mid(i+1,a.length()-i-1).toDouble();
+
+                        once=false;
+                        a.remove(i,a.length()-i);
+                    }
+                    else{
+                        DX_up[DX_len]=a.mid(i+1,a.length()-i-1).toDouble();
+                        DX_len++;
+                        a.remove(i,a.length()-i);
+                        break;
+                    }
+
+                }
+            }
+            a+=")";
+            dot[1]+=")dx";
+            DX_stage=0;
+            DX_open=false;
+        }
+    }
+    cout<<"on_DX_enter_button,DX_len="<<DX_len<<endl;
+    ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
 }
 
 void MainWindow::on_pushButton_39_clicked()
@@ -633,8 +811,8 @@ void MainWindow::on_pushButton_7_clicked()
 
 void MainWindow::on_pushButton_8_clicked()
 {
-    open=true;
-    a+='D';
+    DX_open=true;
+    a+="D(";
     dot[1]+="∫(";
     ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
 
@@ -680,52 +858,8 @@ void MainWindow::on_pushButton_2_clicked()
     }
 }
 
-void MainWindow::on_pushButton_3_clicked()
-{
-    a+='C';
-    if(c==1){
-        c++;
-        dot[1]+="/";
-        ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
-    }
-    else if(c==2){
-        c=0;
-        dot[1]+=")";
-        ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
-    }
-    else if(c==3){
 
-    }
-    else if(c==4){
 
-    }
-    else if(c==5){
-
-    }
-    else if(c==6){
-        c=0;
-    }
-    else if(c==7){
-        c=0;
-        dot[1]+=")^-1";
-        ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
-    }
-    else if(c==8){
-        c=9;
-        dot[1]+=")(";
-        ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
-    }
-    else if(c==9){
-        c=0;
-        dot[1]+=")";
-        ui->textEdit->setText(dot[0]+'\n'+dot[1]+'\n'+dot[2]);
-    }
-}
-
-void MainWindow::on_pushButton_4_clicked()
-{
-    a+='D';
-}
 
 void MainWindow::on_pushButton_5_clicked()
 {
@@ -930,5 +1064,7 @@ void MainWindow::on_clear_button_clicked()
     ui->label_4->setText("(4)  "+rec[3]);
     ui->label_5->setText("(5)  "+rec[4]);
 }
+
+
 
 

@@ -40,35 +40,6 @@
      <string>ALPHA</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>230</y>
-      <width>41</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;-</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>230</y>
-      <width>41</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>-&gt;</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
@@ -997,11 +968,22 @@
      <string>清空</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="DX_enter_button">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>230</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>enter(dx)</string>
+    </property>
+   </widget>
    <zorder>m_pWidget</zorder>
    <zorder>pushButton</zorder>
    <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_4</zorder>
    <zorder>pushButton_5</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton_7</zorder>
@@ -1068,6 +1050,7 @@
    <zorder>ans_button_4</zorder>
    <zorder>ans_button_5</zorder>
    <zorder>clear_button</zorder>
+   <zorder>DX_enter_button</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

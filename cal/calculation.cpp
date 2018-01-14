@@ -9,12 +9,12 @@ using namespace std;
 Calculation::Calculation()
 {
     answer=0;
-    DX_len=0;
+
 }
 Calculation::Calculation(double a,bool r){
     answer=a;
     radordeg=r;
-    DX_len=0;
+
 
 }
 Calculation::Calculation(QString b){
@@ -49,6 +49,7 @@ QString Calculation::cal(char form[],int len,bool &error){
             sym[sc]=form[j];
             sc++;
         }
+
 
         if(count-1<0||sc-1<0){
 

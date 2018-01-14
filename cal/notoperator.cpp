@@ -8,7 +8,10 @@ void Notoperator::input_data(){
 
 }
 
-void Notoperator::del_data(QString dot[],QString &a){
+void Notoperator::del_data(QString dot[],QString &a){//delete運算
+    if(dot[1][dot[1].length()-1]=='=')
+        return;
+
     QString b="";
     bool door=false;
     int del_a=1,del_dot=1;
@@ -34,9 +37,20 @@ void Notoperator::del_data(QString dot[],QString &a){
            del_dot=9;
        }
     }
-    else if(dot[1][dot[1].length()-1]=='s'){//Ans
+    else if(dot[1][dot[1].length()-1]=='S'){//ANS
         del_a=1;
         del_dot=3;
+    }
+    else if(dot[1][dot[1].length()-2]=='S'&&dot[1][dot[1].length()-1]>='1'&&dot[1][dot[1].length()-1]<='5'){//ANSn
+        int site;
+        for(site=a.length()-1;site>=0;site--){
+            if(!((a[site]<='9'&&a[site]>='0')||a[site]=='.'))
+                break;
+        }
+
+        del_a=a.length()-site-1;
+
+        del_dot=4;
     }
 
 
